@@ -7,8 +7,8 @@ const addUser = router.post('/add-user', async (req, res) => {
     const data = req.body
     const newUser = new addUserSchema(data)
     const result = await newUser.save()
-    console.log(result)
     res.status(201).send(result)
+    // console.log(result)
     // res.send(result)
   } catch (error) {
     // console.error(error)
