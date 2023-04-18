@@ -1,10 +1,10 @@
 const express = require('express')
+const balanceModel = require('../../models/balanceModel')
 const router = express.Router()
-const userSchema = require('../models/addUserModel')
 
-const allUsers = router.get('/all-users', async (req, res) => {
+const getBalance = router.get('/total-balance', async (req, res) => {
   try {
-    const result = await userSchema.find()
+    const result = await balanceModel.find()
     // console.log(result)
     res.status(201).send(result)
   } catch (error) {
@@ -13,4 +13,4 @@ const allUsers = router.get('/all-users', async (req, res) => {
   }
 })
 
-module.exports = allUsers
+module.exports = getBalance
