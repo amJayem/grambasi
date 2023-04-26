@@ -8,7 +8,7 @@ const addUser = router.post("/add-user", async (req, res) => {
     const newUser = new addUserSchema(data);
     const result = await newUser.save();
     res.status(201).send(result);
-    // console.log(result)
+    console.log(result)
     // res.send(result)
   } catch (error) {
     // console.error(error)
