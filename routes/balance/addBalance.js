@@ -6,10 +6,11 @@ const addBalance = router.post('/add-balance', async (req, res) => {
   try {
     const data = req.body
     const id = data.id
-    const result = await balanceModel.findOneAndUpdate({ _id: id }, data, {
-      upsert: true,
-      new: true
-    })
+    // const result = await balanceModel.findOneAndUpdate({ _id: id }, data, {
+    //   upsert: true,
+    //   new: true
+    // })
+    const result = await balanceModel(data).save()
     // console.log(data)
     res.status(201).send({ success: true, result })
   } catch (error) {
