@@ -9,7 +9,7 @@ const deleteUser = router.delete('/delete-user', async (req, res) => {
     const deletedUser = await userSchema.findByIdAndDelete(id)
     const filter = { id: id }
     const deletedBalance = await balanceSchema.deleteMany(filter)
-    res.status(201).send({ deletedBalance })
+    res.status(201).send({ deletedBalance, deletedUser })
   } catch (error) {
     console.log(error)
     res.status(500).send({ message: error.message })
