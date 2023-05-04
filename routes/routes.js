@@ -10,6 +10,8 @@ const allEvents = require('./Event/allEvents')
 const deleteEvent = require('./Event/deleteEvent')
 const addCredit = require('./debitCredit/addCredit')
 const addDebit = require('./debitCredit/addDebit')
+const getCredit = require('./debitCredit/getCredit')
+const getDebit = require('./debitCredit/getDebit')
 
 router.route('/add-user').post(addUser)
 router.route('/all-users').get(allUsers)
@@ -22,7 +24,10 @@ router.route('/delete-event').delete(deleteEvent)
 router.route('/add-balance').post(addBalance)
 router.route('/total-balance').get(getBalance)
 
-router.route('/add-credit').post(addCredit)
+router.route('/get-credit').post(addCredit)
+router.route('/get-credit').get(getCredit)
+
 router.route('/add-debit').post(addDebit)
+router.route('/get-debit').get(getDebit)
 
 module.exports = router

@@ -2,10 +2,10 @@ const express = require('express')
 const router = express.Router()
 const creditModel = require('../../models/creditModel.js')
 
-const addCredit = router.post('/get-credit', async (req, res) => {
+const getCredit = router.get('/get-credit', async (req, res) => {
   try {
-    const data = req.body
-    const result = await creditModel(data).save()
+    // const data = req.body
+    const result = await creditModel.find().sort({ createdAt: -1 })
     res.status(201).send({ success: true, result })
   } catch (error) {
     console.error(error)
@@ -13,4 +13,4 @@ const addCredit = router.post('/get-credit', async (req, res) => {
   }
 })
 
-module.exports = addCredit
+module.exports = getCredit
