@@ -1,6 +1,6 @@
-const express = require('express')
-const balanceModel = require('../../models/balanceModel')
-const router = express.Router()
+const express = require('express');
+const balanceModel = require('../../models/balanceModel');
+const router = express.Router();
 
 const addBalance = router.post('/add-balance', async (req, res) => {
   try {
@@ -19,4 +19,4 @@ const addBalance = router.post('/add-balance', async (req, res) => {
   }
 })
 
-module.exports = addBalance
+module.exports = addBalance;
