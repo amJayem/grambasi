@@ -7,7 +7,7 @@ const addEvent = router.post("/add-event", async (req, res) => {
     const data = req.body;
     const newEvent = new eventModel(data);
     const result = await newEvent.save();
-    console.log(result);
+    // console.log(result);
     res.status(201).send(result);
   } catch (error) {
     console.error(error);
