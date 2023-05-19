@@ -7,33 +7,37 @@ const addUserSchema = new mongoose.Schema(
       type: String,
       required: true
     },
+    image: {
+      type: String,
+      required: true
+    },
     fatherName: {
       type: String,
       required: true
     },
     motherName: {
       type: String,
-      required:  true
+      required: true
     },
     memberId: {
       type: Number,
-      required:  true
+      required: true
     },
     mobile: {
       type: Number,
-      required:  true
+      required: true
     },
     dateOfBirth: {
       type: Date,
-      required:  true
+      required: true
     },
     nomineeName: {
       type: String,
-      required:  true
+      required: true
     },
     nomineeMobile: {
       type: String,
-      required:  true
+      required: true
     },
     address: {
       type: String,
