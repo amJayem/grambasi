@@ -2,19 +2,18 @@
 const mongoose = require("mongoose");
 
 // Mongoose Schema
-const balanceSchema = new mongoose.Schema(
+const creditSchema = new mongoose.Schema(
   {
-    memberName: {
+    creditNote: {
       type: String,
       required: true,
     },
-    amount: {
+    credit: {
       type: Number,
       required: true,
     },
-    id: String,
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model("balance", balanceSchema);
+module.exports = mongoose.model("credit", creditSchema);

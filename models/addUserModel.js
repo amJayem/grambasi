@@ -19,6 +19,10 @@ const addUserSchema = new mongoose.Schema(
       type: String,
       required: true
     },
+    image: {
+      type: String,
+      required: true
+    },
     memberId: {
       type: Number,
       required: true
