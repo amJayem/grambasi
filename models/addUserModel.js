@@ -3,6 +3,10 @@ const mongoose = require('mongoose')
 // Mongoose Schema
 const addUserSchema = new mongoose.Schema(
   {
+    memberRule: {
+      type: String,
+      required: true
+    },
     name: {
       type: String,
       required: true
