@@ -15,7 +15,7 @@ const addNotice = router.post('/add-notice', async (req, res) => {
       }
     )
     res.status(201).send(noticeAdded)
-    console.log(noticeAdded)
+    // console.log(noticeAdded)
     // res.send(result)
   } catch (error) {
     // console.error(error)
