@@ -5,11 +5,9 @@ const router = express.Router()
 const getBalance = router.get('/total-balance', async (req, res) => {
   try {
     const result = await balanceModel.find().sort({ createdAt: -1 })
-    // console.log(result)
-    res.status(201).send(result)
+    res.status(200).send({ success: true, result })
   } catch (error) {
-    // console.error(error)
-    res.status(500).send({ message: error.message })
+    res.status(500).send({ success: false, message: error.message })
   }
 })
 
