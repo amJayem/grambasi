@@ -1,22 +1,28 @@
-const express = require("express");
-const balanceModel = require("../../models/balanceModel");
-const router = express.Router();
+const express = require('express')
+const balanceModel = require('../../models/balanceModel')
+const monthlyBalance = require('../../models/monthlyBalanceModel')
+const router = express.Router()
 
-const addBalance = router.post("/add-balance", async (req, res) => {
+const addBalance = router.post('/add-balance', async (req, res) => {
   try {
-    const data = req.body;
-    const id = data.id;
-    // const result = await balanceModel.findOneAndUpdate({ _id: id }, data, {
-    //   upsert: true,
-    //   new: true
-    // })
-    const result = await balanceModel(data).save();
-    console.log(data);
-    res.status(201).send({ success: true, result });
+    const data = req.body
+    const resultMonthly = await monthlyBalance.findOneAndUpdate(
+      { memberId: data.memberId },
+      data,
+      {
+        upsert: true,
+        new: true
+      }
+    )
+    let result
+    if (resultMonthly.memberId) {
+      result = await balanceModel(data).save()
+    }
+    res.status(200).send({ success: true, result, resultMonthly })
   } catch (error) {
-    console.error(error);
-    res.status(500).send({ message: error.message });
+    console.error(error)
+    res.status(500).send({ success: false, message: error.message })
   }
-});
+})
 
-module.exports = addBalance;
+module.exports = addBalance

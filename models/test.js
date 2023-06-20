@@ -2,7 +2,7 @@
 const mongoose = require('mongoose')
 
 // Mongoose Schema
-const balanceSchema = new mongoose.Schema(
+const testSchema = new mongoose.Schema(
   {
     memberName: {
       type: String,
@@ -20,4 +20,4 @@ const balanceSchema = new mongoose.Schema(
   { timestamps: true }
 )
 
-module.exports = mongoose.model('balance', balanceSchema)
+module.exports = mongoose.model('test', testSchema)
