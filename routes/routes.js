@@ -14,6 +14,7 @@ const getCredit = require("./debitCredit/getCredit");
 const getDebit = require("./debitCredit/getDebit");
 const addNotice = require("./notice/addNotice");
 const getNotice = require("./notice/getNotice");
+const getMonthlyBalance = require("./balance/getBalance");
 
 router.route("/add-user").post(addUser);
 router.route("/all-users").get(allUsers);
@@ -25,6 +26,7 @@ router.route("/delete-event").delete(deleteEvent);
 
 router.route("/add-balance").post(addBalance);
 router.route("/total-balance").get(getBalance);
+router.route("/monthly-balance").get(getMonthlyBalance);
 
 router.route("/add-credit").post(addCredit);
 router.route("/get-credit").get(getCredit);
