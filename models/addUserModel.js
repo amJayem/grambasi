@@ -1,60 +1,64 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
 // Mongoose Schema
 const addUserSchema = new mongoose.Schema(
   {
+    memberRule: {
+      type: String,
+      required: true,
+    },
     name: {
       type: String,
-      required: true
+      required: true,
     },
     image: {
       type: String,
-      required: true
+      required: true,
     },
     fatherName: {
       type: String,
-      required: true
+      required: true,
     },
     motherName: {
       type: String,
-      required: true
+      required: true,
     },
     image: {
       type: String,
-      required: true
+      required: true,
     },
     memberId: {
-      type: Number,
-      required: true
+      type: String,
+      required: true,
     },
     mobile: {
       type: Number,
-      required: true
+      required: true,
     },
     dateOfBirth: {
       type: Date,
-      required: true
+      required: true,
     },
     nomineeName: {
       type: String,
-      required: true
+      required: true,
     },
     nomineeMobile: {
       type: String,
-      required: true
+      required: true,
     },
     address: {
       type: String,
-      required: true
+      required: true,
     },
     gender: {
       type: String,
-      required: true
+      required: true,
       // enum: ['expense', 'credit']
-    }
+    },
   },
   { timestamps: true }
-)
+);
 
 // Mongoose Model
-module.exports = mongoose.model('user', addUserSchema)
+module.exports = mongoose.model("user", addUserSchema);
