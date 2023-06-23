@@ -28,7 +28,7 @@ const addUserSchema = new mongoose.Schema(
       required: true,
     },
     memberId: {
-      type: Number,
+      type: String,
       required: true,
     },
     mobile: {
