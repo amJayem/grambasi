@@ -5,6 +5,7 @@ const router = express.Router();
 const addEvent = router.post("/add-event", async (req, res) => {
   try {
     const data = req.body;
+    console.log(data);
     const newEvent = new eventModel(data);
     const result = await newEvent.save();
     // console.log(result);
