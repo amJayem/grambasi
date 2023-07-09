@@ -17,6 +17,10 @@ const getNotice = require('./notice/getNotice')
 const getMonthlyBalance = require('./balance/getBalance')
 const getBalanceKF = require('./kollanFund/getBalanceKF')
 const addBalanceKF = require('./kollanFund/addBalanceKF')
+const addCreditKF = require('./debitCreditKF/addCreditKF')
+const getCreditKF = require('./debitCreditKF/getCreditKF')
+const addDebitKF = require('./debitCreditKF/addDebitKF')
+const getDebitKF = require('./debitCreditKF/getDebitKF')
 
 router.route('/add-user').post(addUser)
 router.route('/all-users').get(allUsers)
@@ -33,8 +37,14 @@ router.route('/monthly-balance').get(getMonthlyBalance)
 router.route('/add-balanceKF').post(addBalanceKF)
 router.route('/total-balanceKF').get(getBalanceKF)
 
+router.route('/add-creditKF').post(addCreditKF)
+router.route('/get-creditKF').get(getCreditKF)
+
 router.route('/add-credit').post(addCredit)
 router.route('/get-credit').get(getCredit)
+
+router.route('/add-debitKF').post(addDebitKF)
+router.route('/get-debitKF').get(getDebitKF)
 
 router.route('/add-debit').post(addDebit)
 router.route('/get-debit').get(getDebit)
