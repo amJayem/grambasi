@@ -6,8 +6,16 @@ const balanceSchema = require('../../models/balanceModel')
 const deleteUser = router.delete('/delete-user', async (req, res) => {
   try {
     const { id } = req.query
-    const deletedUser = await userSchema.findByIdAndDelete(id)
-    const filter = { memberId: id }
+    const filter = { memberId: Number(id) }
+    console.log(
+      'id: ',
+      typeof id,
+      id,
+      'memberId: ',
+      typeof filter.memberId,
+      filter
+    )
+    const deletedUser = await userSchema.findOneAndDelete(filter)
     const deletedBalance = await balanceSchema.deleteMany(filter)
     res.status(201).send({ deletedBalance, deletedUser })
   } catch (error) {
