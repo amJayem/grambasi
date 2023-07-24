@@ -5,27 +5,23 @@ const addUserSchema = new mongoose.Schema(
 	{
 		memberRule: {
 			type: String,
-			required: true,
+			// required: true,
 		},
 		role: {
 			type: String,
-			required: true,
+			// required: true,
 		},
 		name: {
 			type: String,
 			required: true,
 		},
-		image: {
-			type: String,
-			required: true,
-		},
 		fatherName: {
 			type: String,
-			required: true,
+			// required: true,
 		},
 		motherName: {
 			type: String,
-			required: true,
+			// required: true,
 		},
 		image: {
 			type: String,
@@ -41,19 +37,19 @@ const addUserSchema = new mongoose.Schema(
 		},
 		dateOfBirth: {
 			type: Date,
-			required: true,
+			// required: true,
 		},
 		nomineeName: {
 			type: String,
-			required: true,
+			// required: true,
 		},
 		nomineeMobile: {
 			type: String,
-			required: true,
+			// required: true,
 		},
 		address: {
 			type: String,
-			required: true,
+			// required: true,
 		},
 		gender: {
 			type: String,
