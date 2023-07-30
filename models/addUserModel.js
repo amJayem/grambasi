@@ -5,61 +5,47 @@ const addUserSchema = new mongoose.Schema(
   {
     memberRule: {
       type: String
-      // required: true
     },
     role: {
-      type: String,
-      required: true
+      type: String
     },
     name: {
       type: String,
       required: true
     },
-    image: {
-      type: String
-      // required: true
-    },
     fatherName: {
       type: String
-      // required: true
     },
     motherName: {
       type: String
-      // required: true
     },
     image: {
       type: String
-      // required: true
     },
     memberId: {
-      type: Number,
+      type: String,
+      unique: true,
       required: true
     },
     mobile: {
-      type: Number
-      // required: true
+      type: String,
+      required: true
     },
     dateOfBirth: {
       type: Date
-      // required: true
     },
     nomineeName: {
       type: String
-      // required: true
     },
     nomineeMobile: {
       type: String
-      // required: true
     },
     address: {
       type: String
-      // required: true
     },
     gender: {
-      type: String
-      // required: false
-      // required: true
-      // enum: ['expense', 'credit']
+      type: String,
+      required: true
     }
   },
   { timestamps: true }
