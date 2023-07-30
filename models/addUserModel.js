@@ -4,28 +4,23 @@ const mongoose = require('mongoose')
 const addUserSchema = new mongoose.Schema(
   {
     memberRule: {
-      type: String,
-      required: true
+      type: String
+    },
+    role: {
+      type: String
     },
     name: {
       type: String,
       required: true
     },
-    image: {
-      type: String,
-      required: true
-    },
     fatherName: {
-      type: String,
-      required: true
+      type: String
     },
     motherName: {
-      type: String,
-      required: true
+      type: String
     },
     image: {
-      type: String,
-      required: true
+      type: String
     },
     memberId: {
       type: String,
@@ -33,29 +28,24 @@ const addUserSchema = new mongoose.Schema(
       required: true
     },
     mobile: {
-      type: Number,
+      type: String,
       required: true
     },
     dateOfBirth: {
-      type: Date,
-      required: true
+      type: Date
     },
     nomineeName: {
-      type: String,
-      required: true
+      type: String
     },
     nomineeMobile: {
-      type: String,
-      required: true
+      type: String
     },
     address: {
-      type: String,
-      required: true
+      type: String
     },
     gender: {
       type: String,
       required: true
-      // enum: ['expense', 'credit']
     }
   },
   { timestamps: true }
