@@ -24,6 +24,7 @@ const addUserSchema = new mongoose.Schema(
     },
     memberId: {
       type: String,
+      unique: true,
       required: true
     },
     mobile: {

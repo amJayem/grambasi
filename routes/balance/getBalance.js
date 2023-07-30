@@ -13,7 +13,7 @@ const getBalance = router.get('/total-balance', async (req, res) => {
 })
 const getMonthlyBalance = router.get('/monthly-balance', async (req, res) => {
   try {
-    const result = await monthlyBalance.find().sort({ createdAt: -1 })
+    const result = await monthlyBalance.find()
     res.status(200).send({ success: true, result })
   } catch (error) {
     res.status(500).send({ success: false, message: error.message })
