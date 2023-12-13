@@ -5,6 +5,7 @@ const userSchema = require('../../models/addUserModel')
 const allUsers = router.get('/all-users', async (req, res) => {
   try {
     const result = await userSchema.find()
+    // const result = await userSchema.find().limit(20).sort({ _id: -1 })
     // console.log(result)
     res.status(201).send(result)
   } catch (error) {
