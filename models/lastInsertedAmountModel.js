@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const monthlyBalance = new mongoose.Schema(
+const lastInsertedAmount = new mongoose.Schema(
   {
     memberName: {
       type: String,
@@ -18,4 +18,4 @@ const monthlyBalance = new mongoose.Schema(
   { timestamps: true }
 )
 
-module.exports = mongoose.model('monthlyBalance', monthlyBalance)
+module.exports = mongoose.model('lastInsertedAmount', lastInsertedAmount)

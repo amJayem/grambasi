@@ -1,6 +1,6 @@
 const express = require('express')
 const balanceModel = require('../../models/balanceModel')
-const monthlyBalance = require('../../models/monthlyBalanceModel.js')
+const lastInsertedAmount = require('../../models/lastInsertedAmountModel.js')
 const router = express.Router()
 
 const getBalance = router.get('/total-balance', async (req, res) => {
@@ -13,7 +13,7 @@ const getBalance = router.get('/total-balance', async (req, res) => {
 })
 const getMonthlyBalance = router.get('/monthly-balance', async (req, res) => {
   try {
-    const result = await monthlyBalance.find()
+    const result = await lastInsertedAmount.find()
     res.status(200).send({ success: true, result })
   } catch (error) {
     res.status(500).send({ success: false, message: error.message })
