@@ -1,13 +1,13 @@
 const express = require('express')
 // const balanceModel = require('../../models/balanceModel')
-// const monthlyBalance = require('../../models/monthlyBalanceModel')
+// const lastInsertedAmount = require('../../models/monthlyBalanceModel')
 const kollanFundModel = require('../../models/kollanFundModel')
 const router = express.Router()
 
 const addBalanceKF = router.post('/add-balanceKF', async (req, res) => {
   try {
     const data = req.body
-    // const resultMonthly = await monthlyBalance.findOneAndUpdate(
+    // const resultMonthly = await lastInsertedAmount.findOneAndUpdate(
     //   { memberId: data.memberId },
     //   data,
     //   {

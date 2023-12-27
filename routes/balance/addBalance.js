@@ -1,12 +1,12 @@
 const express = require('express')
 const balanceModel = require('../../models/balanceModel')
-const monthlyBalance = require('../../models/monthlyBalanceModel')
+const lastInsertedAmount = require('../../models/lastInsertedAmountModel')
 const router = express.Router()
 
 const addBalance = router.post('/add-balance', async (req, res) => {
   try {
     const data = req.body
-    const resultMonthly = await monthlyBalance.findOneAndUpdate(
+    const resultMonthly = await lastInsertedAmount.findOneAndUpdate(
       { memberId: data.memberId },
       data,
       {
