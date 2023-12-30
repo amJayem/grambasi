@@ -1,8 +1,9 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 // Mongoose Schema
 const addUserSchema = new mongoose.Schema(
   {
+
     memberRole: {
       id: {
         type: Number,
@@ -25,45 +26,48 @@ const addUserSchema = new mongoose.Schema(
     },
     name: {
       type: String,
-      required: true
+      required: true,
     },
     fatherName: {
-      type: String
+      type: String,
     },
     motherName: {
-      type: String
+      type: String,
     },
     image: {
-      type: String
+      type: String,
     },
     memberId: {
       type: String,
       unique: true,
-      required: true
+      required: true,
     },
     mobile: {
       type: String,
-      required: true
+      required: true,
     },
     dateOfBirth: {
-      type: Date
+      type: Date,
     },
     nomineeName: {
-      type: String
+      type: String,
     },
     nomineeMobile: {
-      type: String
+      type: String,
     },
     address: {
-      type: String
+      type: String,
+    },
+    status: {
+      type: String,
     },
     gender: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   { timestamps: true }
-)
+);
 
 // Mongoose Model
-module.exports = mongoose.model('user', addUserSchema)
+module.exports = mongoose.model('user', addUserSchema);
