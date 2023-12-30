@@ -3,11 +3,26 @@ const mongoose = require('mongoose');
 // Mongoose Schema
 const addUserSchema = new mongoose.Schema(
   {
-    memberRule: {
-      type: String,
+
+    memberRole: {
+      id: {
+        type: Number,
+        required: true
+      },
+      role: {
+        type: String,
+        required: true
+      }
     },
     role: {
-      type: String,
+      id: {
+        type: Number,
+        required: true
+      },
+      role: {
+        type: String,
+        required: true
+      }
     },
     name: {
       type: String,
