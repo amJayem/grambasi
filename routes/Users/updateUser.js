@@ -1,8 +1,8 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const userSchema = require("../../models/addUserModel");
+const userSchema = require('../../models/addUserModel');
 
-const updateUser = router.put("/update-user", async (req, res) => {
+const updateUser = router.put('/update-user', async (req, res) => {
   try {
     // const { id } = req.query;
     const data = req.body;
@@ -13,7 +13,7 @@ const updateUser = router.put("/update-user", async (req, res) => {
     const updateUser = await userSchema.findOneAndUpdate(query, data);
 
     res.status(201).send(updateUser);
-    console.log(data);
+    // console.log(data);
     // res.send(result)
   } catch (error) {
     console.error(error);
