@@ -3,6 +3,9 @@ const mongoose = require('mongoose')
 
 const monthlySummarySchema = new mongoose.Schema(
   {
+    memberName: {
+      type: String
+    },
     memberId: {
       type: Number,
       required: true
@@ -12,6 +15,10 @@ const monthlySummarySchema = new mongoose.Schema(
       required: true
     },
     amount: {
+      type: Number,
+      default: 0
+    },
+    total: {
       type: Number,
       default: 0
     }
