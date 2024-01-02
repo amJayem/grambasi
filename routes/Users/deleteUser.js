@@ -1,14 +1,15 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const userSchema = require("../../models/addUserModel");
-const balanceSchema = require("../../models/balanceModel");
+const userSchema = require('../../models/addUserModel');
+const balanceSchema = require('../../models/balanceModel');
 
-const deleteUser = router.delete("/delete-user", async (req, res) => {
+const deleteUser = router.delete('/delete-user', async (req, res) => {
   try {
     const { id } = req.query;
     const filter = { memberId: Number(id) };
+    // console.log(filter);
     console.log(
-      "id: ",
+      'id: ',
       typeof id,
       id
       // "memberId: ",
