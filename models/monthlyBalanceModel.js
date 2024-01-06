@@ -4,7 +4,8 @@ const mongoose = require('mongoose')
 const monthlySummarySchema = new mongoose.Schema(
   {
     memberName: {
-      type: String
+      type: String,
+      required: true
     },
     memberId: {
       type: Number,
