@@ -28,9 +28,9 @@ const allUsers = router.get('/all-users', async (req, res) => {
     if (pageSize !== null) {
       findQuery.limit(pageSize)
     }
-    const allHomepageUsers = await findQuery.sort({ _id: -1 })
+    const allHomepageUsers = await findQuery //.sort({ _id: -1 })
 
-    const allUsers = await userSchema.find().limit(pageSize).sort({ _id: -1 })
+    const allUsers = await userSchema.find().limit(pageSize) //.sort({ _id: -1 })
     // Count all documents in the collection (without any query)
     const totalCount = await userSchema.countDocuments()
     // console.log(totalCount)
