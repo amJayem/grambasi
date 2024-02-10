@@ -5,12 +5,12 @@ const addUserSchema = new mongoose.Schema(
   {
     memberRole: {
       id: {
-        type: Number,
-        required: true
+        type: Number
+        // required: true,
       },
       role: {
-        type: String,
-        required: true
+        type: String
+        // required: true,
       }
     },
     role: {
@@ -37,7 +37,7 @@ const addUserSchema = new mongoose.Schema(
       type: String
     },
     memberId: {
-      type: String,
+      type: Number,
       unique: true,
       required: true
     },
@@ -56,6 +56,9 @@ const addUserSchema = new mongoose.Schema(
     },
     address: {
       type: String
+    },
+    releaseStatus: {
+      type: Boolean
     },
     gender: {
       type: String,

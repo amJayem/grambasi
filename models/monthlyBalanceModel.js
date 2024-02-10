@@ -1,6 +1,7 @@
+// monthly-summary-model.js
 const mongoose = require('mongoose')
 
-const monthlyBalance = new mongoose.Schema(
+const monthlySummarySchema = new mongoose.Schema(
   {
     memberName: {
       type: String,
@@ -10,12 +11,20 @@ const monthlyBalance = new mongoose.Schema(
       type: Number,
       required: true
     },
+    month: {
+      type: String,
+      required: true
+    },
     amount: {
       type: Number,
-      required: true
+      default: 0
+    },
+    total: {
+      type: Number,
+      default: 0
     }
   },
   { timestamps: true }
 )
 
-module.exports = mongoose.model('monthlyBalance', monthlyBalance)
+module.exports = mongoose.model('MonthlySummary', monthlySummarySchema)
