@@ -27,6 +27,10 @@ const addUserSchema = new mongoose.Schema(
       type: String,
       required: true
     },
+    nameENG: {
+      type: String,
+      required: true
+    },
     fatherName: {
       type: String
     },
