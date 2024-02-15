@@ -20,7 +20,8 @@ const addBalance = router.post('/add-balance', async (req, res) => {
       },
       {
         $inc: { amount: data?.amount },
-        $set: { memberName: data?.memberName } // Set memberName in monthlySummary
+        $set: { memberName: data?.memberName }, // Set memberName in monthlySummary
+        $set: { memberNameENG: data?.memberNameENG } // Set memberName in monthlySummary
       },
       { upsert: true, new: true }
     )
@@ -29,6 +30,7 @@ const addBalance = router.post('/add-balance', async (req, res) => {
     if (!monthlySummary) {
       const newMonthlySummary = new monthlySummaryModel({
         memberName: data.memberName,
+        memberNameENG: data.memberNameENG,
         memberId: data.memberId,
         month: `${month}-${year}`,
         amount: data.amount,
