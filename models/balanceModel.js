@@ -8,6 +8,10 @@ const balanceSchema = new mongoose.Schema(
       type: String,
       required: true
     },
+    memberNameENG: {
+      type: String,
+      required: true
+    },
     memberId: {
       type: Number,
       required: true
