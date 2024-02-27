@@ -6,6 +6,9 @@ const router = express.Router()
 const addBalance = router.post('/add-balance', async (req, res) => {
   try {
     const data = req.body
+    // console.log('******** data *********')
+    // console.log(data)
+    // console.log('*******************')
     // Calculate the month and year from the current date
     const currentDate = new Date()
     const month = currentDate.toLocaleString('en-US', { month: 'short' })
@@ -20,12 +23,17 @@ const addBalance = router.post('/add-balance', async (req, res) => {
       },
       {
         $inc: { amount: data?.amount },
-        $set: { memberName: data?.memberName }, // Set memberName in monthlySummary
-        $set: { memberNameENG: data?.memberNameENG } // Set memberName in monthlySummary
+        $set: {
+          memberNameENG: data?.memberNameENG,
+          memberName: data?.memberName
+        } // Set memberName in monthlySummary
+        // $set: { memberName: data?.memberName } // Set memberName in monthlySummary
       },
       { upsert: true, new: true }
     )
-
+    // console.log('########### monthlySummary ##############')
+    // console.log(monthlySummary)
+    // console.log('###########################')
     // If there's no existing data for the given month and year, create a new entry
     if (!monthlySummary) {
       const newMonthlySummary = new monthlySummaryModel({
